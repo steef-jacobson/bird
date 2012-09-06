@@ -1,0 +1,10 @@
+Sun, 26 Aug 2012 23:43:02 -0400
+doc/README_FOR_APP	Sun, 26 Aug 2012 00:39:01 -0400
+app/controllers/application_controller.rb	Sun, 26 Aug 2012 00:38:59 -0400
+app/controllers/users_controller.rb	Sun, 26 Aug 2012 13:29:49 -0400
+app/controllers/watches_controller.rb	Sun, 26 Aug 2012 13:39:29 -0400
+app/helpers/application_helper.rb	Sun, 26 Aug 2012 00:38:59 -0400
+app/helpers/users_helper.rb	Sun, 26 Aug 2012 00:41:54 -0400
+app/helpers/watches_helper.rb	Sun, 26 Aug 2012 00:41:05 -0400
+app/models/user.rb	Sun, 26 Aug 2012 13:04:45 -0400
+app/models/watch.rb	Sun, 26 Aug 2012 11:25:39 -0400

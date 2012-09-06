@@ -1,0 +1,40 @@
+<center>
+<hr> 
+<h1>NYC Bird Watching</h1>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cyanocitta_cristata_blue_jay.jpg/792px-Cyanocitta_cristata_blue_jay.jpg" WIDTH=200 HEIGHT=150" />
+
+<br>
+<h2>Users</h2>
+
+<table>
+  <tr>
+    <th>Id#</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Count</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.watches.count %></td>
+    <td><%= link_to 'Show', user %></td>
+    <%- if current_user == user %>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- end %>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+<img src="/berries.jpg" HEIGHT=70 style="width:100%;" />
+<br>
+<br>
+<%= link_to 'New Watch', new_watch_path %> <br>
+</center>

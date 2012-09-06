@@ -1,0 +1,48 @@
+<center>
+<hr>     
+<h1>NYC Bird Watching</h1>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cyanocitta_cristata_blue_jay.jpg/792px-Cyanocitta_cristata_blue_jay.jpg" WIDTH=200 HEIGHT=150" />
+
+<h2>Watches</h2>
+
+<table>
+  <tr>
+    <th>User#</th>
+    <th>Name</th>
+    <th>Bird</th>
+    <th>Boro</th>
+    <th>Location</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @watches.each do |watch| %>
+  <tr>
+    <td><%= watch.user_id %></td>
+    <td><%= watch.user.name %></td>
+    <td><%= watch.bird %></td>
+    <td><%= watch.boro %></td>
+    <td><%= watch.location %></td>
+    <td><%= watch.notes %></td>
+     
+    <td><%= link_to 'Show', watch %></td>
+
+    <% if current_user == watch.user %>
+    <td><%= link_to 'Edit', edit_watch_path(watch) %></td>
+    <td><%= link_to 'Destroy', watch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%  end  %>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+<img src="/bird_watching.jpg" HEIGHT=70 style="width:100%;" />
+<br>
+
+<%= link_to 'New Watch', new_watch_path %> <br>
+<%= link_to 'Main Menu', users_path %><br>
+
+</center>

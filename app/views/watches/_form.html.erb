@@ -1,0 +1,42 @@
+<%= form_for(@watch) do |f| %>
+  <% if @watch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@watch.errors.count, "error") %> prohibited this watch from being saved:</h2>
+
+      <ul>
+      <% @watch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bird %><br />
+    <%= f.text_field :bird %>
+  </div>
+
+  <div class="field">
+    <%= f.label :boro %><br />
+    <%= f.select :boro, [['Bronx','Bronx'],
+                         ['Brooklyn','Brooklyn'],
+                         ['Queens','Queens'],
+                         ['Manhattan','Manhattan'],
+                         ['Staten Island','Staten Island'] ]%>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
